@@ -1,0 +1,32 @@
+body {
+  background: url('https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExYjA3NnRvZnFlaXZwb240OXFlZjd5ZGJndXB5bXU0YWtzMnh2aXIwZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/tHIRLHtNwxpjIFqPdV/giphy.gif') repeat;
+  background-size: 200px 200px;
+  color: #fff;
+  text-align: center;
+}
+
+.container {
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 20px;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+input {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #27ae60;
+  color: #fff;
+  cursor: pointer;
+}
+
+#weatherResult {
+  margin-top: 20px;
+}
