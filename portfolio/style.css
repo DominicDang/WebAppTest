@@ -1,0 +1,210 @@
+/* Smooth scrolling for anchor links */
+html { scroll-behavior: smooth; }
+ 
+/* Basic reset */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+ 
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+ 
+/* ===== Navbar ===== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid #eee;
+}
+ 
+.nav {
+  max-width: 1100px;
+  margin: auto;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+ 
+.brand {
+  font-weight: 600;
+  text-decoration: none;
+  color: #1e3c72;
+  font-size: 1.1rem;
+}
+ 
+/* Desktop links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+ 
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+ 
+.nav-links a:hover {
+  color: #1e3c72;
+}
+ 
+/* Hamburger (hidden on desktop) */
+.nav-toggle { display: none; }
+ 
+.hamburger {
+  display: none;
+  width: 36px;
+  height: 28px;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: space-between;
+}
+ 
+.hamburger span {
+  height: 4px;
+  border-radius: 3px;
+  background: #1e3c72;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+ 
+/* Mobile styles */
+@media (max-width: 768px) {
+  .hamburger { display: flex; }
+ 
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    width: min(260px, calc(100vw - 40px));
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    padding: 12px;
+    display: none; /* hidden until checked */
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+ 
+  .nav-links li { width: 100%; }
+ 
+  .nav-links a {
+    display: block;
+    width: 100%;
+    padding: 10px 10px;
+    border-radius: 8px;
+  }
+ 
+  .nav-links a:hover {
+    background: #f4f6ff;
+  }
+ 
+  /* Show menu when toggle checked */
+  .nav-toggle:checked ~ .nav-links {
+    display: flex;
+  }
+ 
+  /* Animate hamburger into X */
+  .nav-toggle:checked + .hamburger span:nth-child(1) {
+    transform: translateY(12px) rotate(45deg);
+  }
+  .nav-toggle:checked + .hamburger span:nth-child(2) {
+    opacity: 0;
+  }
+  .nav-toggle:checked + .hamburger span:nth-child(3) {
+    transform: translateY(-12px) rotate(-45deg);
+  }
+}
+ 
+/* ===== Your existing section styles can stay below ===== */
+ 
+/* Hero */
+.hero {
+  height: 100vh;
+  background: linear-gradient(120deg, #1e3c72, #2a5298);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+}
+ 
+.hero span { color: #ffdd57; }
+ 
+.btn {
+  margin-top: 20px;
+  padding: 12px 30px;
+  background: #ffdd57;
+  color: #333;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: 600;
+}
+ 
+/* Sections */
+section {
+  padding: 60px 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+ 
+h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2rem;
+}
+ 
+/* About */
+.about p {
+  text-align: center;
+  max-width: 700px;
+  margin: auto;
+}
+ 
+/* Skills */
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+ 
+.skill-list span {
+  background: #f4f4f4;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+ 
+/* Projects */
+.projects { background: #f9f9f9; }
+ 
+.project-card {
+  background: white;
+  padding: 25px;
+  margin: 20px 0;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+ 
+/* Contact */
+.contact { text-align: center; }
+ 
+/* Footer */
+footer {
+  background: #222;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  font-size: 0.9rem;
+}
